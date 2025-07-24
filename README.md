@@ -67,3 +67,13 @@ node models/user.js
 ```
 
 Inside each file, use the runDemo() function to toggle what you want to test.
+
+---
+
+## Feedback
+If you find this project helpful, consider starring the repo to support my learning journey!
+
+---
+
+## License
+This project is licensed under the [MIT License](LICENSE).
