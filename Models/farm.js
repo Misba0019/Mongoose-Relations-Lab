@@ -63,8 +63,8 @@ const showPopulatedFarm = async () => {
 
 // Demo runner
 const runDemo = async() => {
-    await makeFarm(); // Run this only once, or it creates duplicates
-    await addProduct(); // Adds a new product to existing farm
-    await showPopulatedFarm(); // View farm with populated product details
+    // await makeFarm();
+    // await addProduct();
+    await showPopulatedFarm();
 }
 runDemo();
