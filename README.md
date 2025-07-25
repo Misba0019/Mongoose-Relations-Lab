@@ -7,14 +7,6 @@ This lab explores real-world data modeling techniques, including referenced rela
 
 ---
 
-## Technologies Used
-
-- Node.js
-- MongoDB
-- Mongoose
-
----
-
 ## Key Concepts Demonstrated
 
 - **One-to-many relationships** using ObjectId references (e.g., Farm ➝ Products)
@@ -26,22 +18,11 @@ This lab explores real-world data modeling techniques, including referenced rela
 
 ---
 
-## Code Highlights
+## Technologies Used
 
-### `farm.js`
-- References `Product` documents inside `Farm` using ObjectId array
-- Demonstrates adding and populating related data
-- Uses `.populate('products')` to pull full product data
-
-### `tweet.js`
-- Each `Tweet` references a `User`
-- `.populate('user')` is used to simulate a join
-- Demonstrates how to associate a document with another using references
-
-### `user.js`
-- Embeds multiple `addresses` directly inside the `User` document
-- Shows how to push new **subdocuments** to an embedded array
-- Uses `_id: false` to avoid Mongoose adding subdocument IDs
+- Node.js
+- MongoDB
+- Mongoose
 
 ---
 
@@ -67,6 +48,45 @@ node models/user.js
 ```
 
 Inside each file, use the runDemo() function to toggle what you want to test.
+
+---
+
+## Example Usage
+
+Inside each file, a `runDemo()` function is defined. You can comment/uncomment specific demo functions to control what runs:
+```bash
+const runDemo = async () => {
+  // await makeFarm(); // Creates a farm
+  // await addProduct(); // Adds product to the farm
+  await showPopulatedFarm(); // Displays farm with populated products
+}
+```
+Only run what you need — this helps avoid duplicate entries or redundant data in your MongoDB collections.
+
+---
+
+## Tip
+To explore your MongoDB data visually, you can use tools like mongosh (CLI shell) or MongoDB Compass (GUI viewer).  
+While this project runs entirely in the terminal, these tools are useful for inspecting your collections during development.
+
+---
+
+## Code Highlights
+
+### `farm.js`
+- References `Product` documents inside `Farm` using ObjectId array
+- Demonstrates adding and populating related data
+- Uses `.populate('products')` to pull full product data
+
+### `tweet.js`
+- Each `Tweet` references a `User`
+- `.populate('user')` is used to simulate a join
+- Demonstrates how to associate a document with another using references
+
+### `user.js`
+- Embeds multiple `addresses` directly inside the `User` document
+- Shows how to push new **subdocuments** to an embedded array
+- Uses `_id: false` to avoid Mongoose adding subdocument IDs
 
 ---
 
